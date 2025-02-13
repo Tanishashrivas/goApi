@@ -5,5 +5,5 @@ import (
 )
 
 func IsEmpty(c *models.Course) bool {
-	return c.CourseId == "" && c.CourseName == ""
+	return c.CourseName == ""
 }
