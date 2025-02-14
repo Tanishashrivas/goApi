@@ -16,6 +16,8 @@ const colName = "courselist"
 
 var Collection *mongo.Collection
 
+// Importing the internal package will automatically trigger the init() function inside db.go (which establishes the database connection).
+
 func init() {
 	//client options
 	clientOption := options.Client().ApplyURI(connectionstring)
@@ -28,5 +30,5 @@ func init() {
 
 	Collection = client.Database(dbName).Collection(colName)
 
-	fmt.Println("Collection instance is ready", Collection, client)
+	fmt.Println("Collection instance is ready")
 }
