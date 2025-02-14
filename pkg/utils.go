@@ -3,6 +3,7 @@ package pkg
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 
 	m "github.com/tanishashrivas/goApi/internal/models"
@@ -25,4 +26,10 @@ func ValidateCourse(course *m.Course) error {
 		return fmt.Errorf("author details are required")
 	}
 	return nil
+}
+
+func CheckNilError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
 }
